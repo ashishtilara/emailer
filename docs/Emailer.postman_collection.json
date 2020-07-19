@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "003f757b-a883-43f4-8830-1f48d21d7671",
+		"name": "Emailer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/dev/v1/email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"to\": [\"ashish@pickcell.io\"],\n  \"cc\":[],\n  \"bcc\":[],\n  \"message\": {\n    \"subject\": \"Hello World\",\n    \"body\": {\n      \"text\": \"Heyyy\",\n      \"html\": \"<h1>Hello</h1>\"\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/v1/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"v1",
+						"email"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

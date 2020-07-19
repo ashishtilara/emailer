@@ -12,6 +12,8 @@
     - thru CI
         - set all environment variables listed in `environment.template.sh` as CI environment variables
         - in CI, execute `npm i` to install all dependencies and deploy with `npm run deploy` 
+5. Postman collection can be found [here](docs/Emailer.postman_collection.json)
+
 
 ## Endpoints
 
