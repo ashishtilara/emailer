@@ -1,0 +1,27 @@
+{
+  "name": "emailer",
+  "version": "1.0.0",
+  "description": "wrapper API for emails",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "./bin/local.sh",
+    "deploy": "./bin/deploy.sh"
+  },
+  "author": "Ashish Tilara <ashish@itcutives.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.1.0",
+    "serverless": "^1.75.1",
+    "serverless-offline": "^6.4.0"
+  },
+  "dependencies": {
+    "@itcutives/serverless-helpers": "^4.0.0",
+    "ajv": "^6.12.3",
+    "boom": "^7.3.0",
+    "lodash.get": "^4.4.2"
+  }
+}
