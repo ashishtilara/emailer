@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "required": [
+    "to",
+    "message"
+  ],
+  "properties": {
+    "to": {
+      "$id": "#/properties/to",
+      "type": "array",
+      "title": "The to schema",
+      "additionalItems": true,
+      "minItems": 1,
+      "maxItems": 1000,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/emails"
+          }
+        ],
+        "$id": "#/properties/to/items"
+      }
+    },
+    "cc": {
+      "$id": "#/properties/cc",
+      "type": "array",
+      "title": "The cc schema",
+      "description": "An explanation about the purpose of this instance.",
+      "additionalItems": true,
+      "maxItems": 1000,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/emails"
+          }
+        ],
+        "$id": "#/properties/cc/items"
+      }
+    },
+    "bcc": {
+      "$id": "#/properties/bcc",
+      "type": "array",
+      "title": "The bcc schema",
+      "description": "An explanation about the purpose of this instance.",
+      "additionalItems": true,
+      "maxItems": 1000,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/emails"
+          }
+        ],
+        "$id": "#/properties/bcc/items"
+      }
+    },
+    "message": {
+      "$id": "#/properties/message",
+      "type": "object",
+      "title": "The message schema",
+      "description": "An explanation about the purpose of this instance.",
+      "required": [
+        "subject",
+        "body"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "subject": {
+          "$id": "#/properties/message/properties/subject",
+          "type": "string",
+          "title": "The subject schema",
+          "description": "An explanation about the purpose of this instance."
+        },
+        "body": {
+          "$id": "#/properties/message/properties/body",
+          "type": "object",
+          "title": "The body schema",
+          "description": "An explanation about the purpose of this instance.",
+          "anyOf": [
+            {
+              "required": [
+                "text"
+              ]
+            },
+            {
+              "required": [
+                "html"
+              ]
+            }
+          ],
+          "properties": {
+            "text": {
+              "$id": "#/properties/message/properties/body/properties/text",
+              "type": "string",
+              "title": "The text schema",
+              "description": "An explanation about the purpose of this instance."
+            },
+            "html": {
+              "$id": "#/properties/message/properties/body/properties/html",
+              "type": "string",
+              "title": "The html schema",
+              "description": "An explanation about the purpose of this instance."
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "emails": {
+      "$id": "#/definitions/emails",
+      "type": "string",
+      "format": "email"
+    }
+  }
+}
